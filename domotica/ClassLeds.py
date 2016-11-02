@@ -18,7 +18,7 @@ class Led:
 		GPIO.output(self.__pin, GPIO.LOW)
 
 class LedsController:
-	LEDS = [Led(23, 4), Led(24, 5), Led(25, 6), Led(14, 1), Led(15, 2), Led(18, 3), Led(8, 7)]	
+	LEDS = [Led(14, 1), Led(15, 2), Led(18, 3), Led(23, 4), Led(24, 5), Led(25, 6), Led(8, 7)]
 
 	def getLed(self, ledNumber) :
 		for led in self.LEDS :
@@ -47,19 +47,21 @@ class LedsController:
 		return
 	
 	def serieLeftToRight(self) :
-		numberLed = 0
-		while (numberLed < len(self.LEDS)) :
-			self.LEDS[numberLed].turnOn();
+		numberLed = 1
+		while (numberLed <= len(self.LEDS)) :
+			led = self.getLed(numberLed)
+			led.turnOn()
 			time.sleep(.25)
-			self.LEDS[numberLed].turnOff();
+			led.turnOff()
 			numberLed += 1
 
 	def serieRightToLeft(self) :
 		numberLed = len(self.LEDS)-1
 		while (numberLed >= 0) :
-			self.LEDS[numberLed].turnOn();
+			led = self.getLed(numberLed)
+			led.turnOn()
 			time.sleep(.25)
-			self.LEDS[numberLed].turnOff();
+			led.turnOff()
 			numberLed -= 1
 
 class Operator:
