@@ -48,7 +48,7 @@ class LedsController:
 	
 	def serieLeftToRight(self) :
 		numberLed = 1
-		while (numberLed <= len(self.LEDS)) :
+		while (numberLed < len(self.LEDS)) :
 			led = self.getLed(numberLed)
 			led.turnOn()
 			time.sleep(.25)
@@ -57,7 +57,7 @@ class LedsController:
 
 	def serieRightToLeft(self) :
 		numberLed = len(self.LEDS)-1
-		while (numberLed >= 0) :
+		while (numberLed > 0) :
 			led = self.getLed(numberLed)
 			led.turnOn()
 			time.sleep(.25)
