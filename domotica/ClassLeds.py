@@ -18,7 +18,7 @@ class Led:
 		GPIO.output(self.__pin, GPIO.LOW)
 
 class LedsController:
-	LEDS = [Led(14, 1), Led(15, 2), Led(18, 3), Led(23, 4), Led(24, 5), Led(25, 6), Led(8, 7)]
+	LEDS = [Led(14, 1), Led(15, 2), Led(18, 3), Led(23, 4), Led(24, 5), Led(25, 6), Led(8, 7), Led(7, 8)]
 
 	def getLed(self, ledNumber) :
 		for led in self.LEDS :
