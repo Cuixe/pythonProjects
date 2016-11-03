@@ -1,9 +1,8 @@
-import LedEffects
-import sys
+import LedController
 
 class LedsOperation:
 
-    CONTROLLER = LedEffects()
+    CONTROLLER = LedController()
 
     def __init__(self, args):
         self.operation = args[1]
