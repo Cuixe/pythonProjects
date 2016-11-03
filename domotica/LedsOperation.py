@@ -2,9 +2,8 @@ import LedController
 
 class LedsOperation:
 
-    CONTROLLER = LedController()
-
     def __init__(self, args):
+        self.controller = LedController()
         self.operation = args[1]
         if len(args) == 2:
             self.option = 1
@@ -15,24 +14,24 @@ class LedsOperation:
         ejecutions = 0
         if self.operation == 'serie':
             while ejecutions < self.option:
-                self.CONTROLLER.rightToLeft()
+                self.controller.rightToLeft()
                 ejecutions += 1
         elif self.operation == 'inv':
             while ejecutions < self.option:
-                self.CONTROLLER.leftToRight()
+                self.controller.leftToRight()
                 ejecutions += 1
         elif self.operation == 'kit':
             while ejecutions < self.option:
-                self.CONTROLLER.rightToLeft()
-                self.CONTROLLER.leftToRight()
+                self.controller.rightToLeft()
+                self.controller.leftToRight()
                 ejecutions += 1
         elif self.operation == 'all':
             if self.option == 1:
-                self.CONTROLLER.turnAllOn()
+                self.controller.turnAllOn()
             else:
-                self.CONTROLLER.turnAllOff()
+                self.controller.turnAllOff()
         else:
             if self.option == 1:
-                self.CONTROLLER.turnOnLed(int(self.operation))
+                self.controller.turnOnLed(int(self.operation))
             else:
-                self.CONTROLLER.turnOffLed(int(self.operation))
+                self.controller.turnOffLed(int(self.operation))
