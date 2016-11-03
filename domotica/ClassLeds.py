@@ -8,7 +8,7 @@ GPIO.setwarnings(False)
 class Led:
 	def __init__(self, pin, ledNumber) :
 		self.__pin = pin
-		self.ledNumber = ledNumber;
+		self.ledNumber = ledNumber
 		GPIO.setup(self.__pin, GPIO.OUT)
 
 	def turnOn(self):
@@ -47,8 +47,9 @@ class LedsController:
 		return
 	
 	def serieLeftToRight(self) :
+		self.turnAllOff()
 		numberLed = 1
-		while (numberLed < len(self.LEDS)) :
+		while (numberLed <= len(self.LEDS)) :
 			led = self.getLed(numberLed)
 			led.turnOn()
 			time.sleep(.25)
@@ -56,7 +57,8 @@ class LedsController:
 			numberLed += 1
 
 	def serieRightToLeft(self) :
-		numberLed = len(self.LEDS)-1
+		self.turnAllOff()
+		numberLed = len(self.LEDS)
 		while (numberLed > 0) :
 			led = self.getLed(numberLed)
 			led.turnOn()
@@ -104,10 +106,3 @@ class Operator:
 
 operator = Operator(sys.argv)
 operator.execute()
-
-"""controller = LedsController()
-led = controller.getLed(4)
-led.turnOn()
-time.sleep(1)
-led.turnOff()
-"""
