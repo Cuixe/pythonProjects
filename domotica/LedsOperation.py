@@ -37,7 +37,3 @@ class LedsOperation:
                 self.CONTROLLER.turnOnLed(int(self.operation))
             else:
                 self.CONTROLLER.turnOffLed(int(self.operation))
-
-
-operator = LedsOperation(sys.argv)
-operator.execute()
