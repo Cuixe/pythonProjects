@@ -1,4 +1,4 @@
-import Led
+from Led import Led
 import time
 
 class LedController:

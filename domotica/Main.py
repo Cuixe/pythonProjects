@@ -1,4 +1,4 @@
-import LedsOperation
+from LedsOperation import LedsOperation
 import sys
 
 operator = LedsOperation(sys.argv)
