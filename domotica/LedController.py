@@ -1,5 +1,6 @@
 from Led import Led
 import time
+import RPi.GPIO as GPIO
 
 class LedController:
 
@@ -14,6 +15,8 @@ class LedController:
             Led(7, 8),
             Led(8, 7)
         ]
+        GPIO.setmode(GPIO.BCM)
+        GPIO.setwarnings(False)
 
     def addLed(self, led):
         self.__leds.append(led)
