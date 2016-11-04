@@ -4,6 +4,8 @@ class Led:
     def __init__(self, ledNumber, pin):
         self.__pin = pin
         self.ledNumbre = ledNumber
+        GPIO.setmode(GPIO.BCM)
+        GPIO.setwarnings(False)
         GPIO.setup(self.__pin, GPIO.OUT)
 
     def turnOn(self):
