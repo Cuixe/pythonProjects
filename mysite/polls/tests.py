@@ -1,3 +1,2 @@
-from django.test import TestCase
-
-# Create your tests here.
+from test.model.QuestionMethodTests import QuestionMethodTests
+from test.view.QuestionViewTests import QuestionViewTests
