@@ -3,7 +3,7 @@ import RPi.GPIO as GPIO
 
 class Led:
 
-    ledNumber = 0
+    ledNumber = 1
 
     def __init__(self, pin):
         self.__pin = pin
