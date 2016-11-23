@@ -1,18 +1,19 @@
 from Led import Led
 import time
 
+
 class LedController:
 
     def __init__(self):
         self.__leds = [
-            Led(1, 14),
-            Led(2, 15),
-            Led(3, 18),
-            Led(4, 23),
-            Led(5, 24),
-            Led(6, 25),
-            Led(7, 8),
-            Led(8, 7)
+            Led(14),
+            Led(15),
+            Led(18),
+            Led(23),
+            Led(24),
+            Led(25),
+            Led(8),
+            Led(7)
         ]
 
     def addLed(self, led):
