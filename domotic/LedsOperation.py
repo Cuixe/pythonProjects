@@ -1,9 +1,11 @@
 from LedController import LedController
+from utils import Cleaner
 
 class LedsOperation:
 
     def __init__(self, args):
         self.controller = LedController()
+	self.cleaner = Cleaner()
         self.operation = args[1]
         if len(args) == 2:
             self.option = 1
@@ -30,6 +32,8 @@ class LedsOperation:
                 self.controller.turnAllOn()
             else:
                 self.controller.turnAllOff()
+	elif self.operation == 'clean':
+	    self.cleaner.clean_all()
         else:
             if self.option == 1:
                 self.controller.turnOnLed(int(self.operation))
